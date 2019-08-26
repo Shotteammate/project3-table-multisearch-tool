@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import './App.css';
+import SearchBar from './components/SearchBar/SearchBar';
+import CountryTable from './components/CountryTable/CountryTable';
 
 export class App extends Component {
   constructor(props) {
@@ -48,18 +50,24 @@ export class App extends Component {
   }
 
   render() {
-    console.log(this.state.data);
+    console.log(this.state.data); // ok
 
     return (
       <div className="App">
         <h1>Country/Capital Data Multi-Search Service</h1>
-
+        <SearchBar 
+          country={this.state.country} 
+          capital={this.state.capital}
+          region={this.state.region}
+          subregion={this.state.subregion}/>
+        <CountryTable 
+          data={this.state.data}/>
       </div>
     )
   }
 }
 
-export default App
+export default App;
 
 // <p>{this.state.data}</p>
 
