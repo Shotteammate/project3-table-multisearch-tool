@@ -7,10 +7,9 @@ export class App extends Component {
   constructor(props) {
     super(props);
 
+    this.data = []; // this data should not live in state
     this.state = {
-      data: [],
       country: '',
-      capital: '',
       region: '',
       subregion: '',
       isLoading: true,
@@ -28,7 +27,7 @@ export class App extends Component {
         let array = [];
 
         for (let i = 0; i < data.length; i++) {
-          let entry = new Object();
+          let entry = {};
           //key value pairs
           entry.country = data[i].name.official;
           entry.capital = data[i].capital;
@@ -39,8 +38,8 @@ export class App extends Component {
 
           array[i] = entry;
         }
+        this.data = array;
         this.setState({
-          data: array,
           isLoading: false,
         });
       })
@@ -49,19 +48,30 @@ export class App extends Component {
       .catch(error => this.setState({ error, isLoading: false }));
   }
 
+  handleSearchEvents = (title, name) => {
+    this.setState({ [name]: title });
+  }
+
   render() {
-    console.log(this.state.data); // ok
+    console.log(this.data); // data is array of objects
+    const filteredData = this.data.filter((dataObj)=> (dataObj.country.indexOf(this.state.country) !== -1)&&
+    (dataObj.region.indexOf(this.state.region) !== -1)&&
+    (dataObj.subregion.indexOf(this.state.subregion) !== -1));
+  
 
     return (
       <div className="App">
         <h1>Country/Capital Data Multi-Search Service</h1>
-        <SearchBar 
-          country={this.state.country} 
-          capital={this.state.capital}
+        <SearchBar
+          country={this.state.country}
           region={this.state.region}
-          subregion={this.state.subregion}/>
-        <CountryTable 
-          data={this.state.data}/>
+          subregion={this.state.subregion}
+          handleSearchEvents={this.handleSearchEvents} />
+        <CountryTable
+          country={this.state.country}
+          region={this.state.region}
+          subregion={this.state.subregion}
+          data={filteredData} /> {/* should pass filtered data into CountryTable*/}
       </div>
     )
   }

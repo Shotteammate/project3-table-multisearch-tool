@@ -5,15 +5,17 @@ export class CountryTable extends Component {
   render() {
     let rows = [];
 
-    this.props.data.forEach((dataObj, index) => {
+    //generate the table rows
+    //based on container representational pattern and Hook, CountryTable should not have business logic
+    this.props.data.forEach((dataObj) => {
       rows.push(
         <TableRow
-          key={index}
+          key={dataObj.country}
           country={dataObj.country}
           capital={dataObj.capital}
           region={dataObj.region}
-          subregion={dataObj.subregion} 
-          language={dataObj.language}/>);
+          subregion={dataObj.subregion}
+          language={dataObj.language} />);
     });
 
     return (
