@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/project3-table-multisearch-tool/static/css/main.7b6a287d.chunk.css",
+    "main.js": "/project3-table-multisearch-tool/static/js/main.f116c6f2.chunk.js",
+    "main.js.map": "/project3-table-multisearch-tool/static/js/main.f116c6f2.chunk.js.map",
+    "runtime~main.js": "/project3-table-multisearch-tool/static/js/runtime~main.485ea21c.js",
+    "runtime~main.js.map": "/project3-table-multisearch-tool/static/js/runtime~main.485ea21c.js.map",
+    "static/js/2.83ca4f42.chunk.js": "/project3-table-multisearch-tool/static/js/2.83ca4f42.chunk.js",
+    "static/js/2.83ca4f42.chunk.js.map": "/project3-table-multisearch-tool/static/js/2.83ca4f42.chunk.js.map",
+    "index.html": "/project3-table-multisearch-tool/index.html",
+    "precache-manifest.092e7954aa645022c87ebc551328a4c5.js": "/project3-table-multisearch-tool/precache-manifest.092e7954aa645022c87ebc551328a4c5.js",
+    "service-worker.js": "/project3-table-multisearch-tool/service-worker.js",
+    "static/css/main.7b6a287d.chunk.css.map": "/project3-table-multisearch-tool/static/css/main.7b6a287d.chunk.css.map"
+  }
+}
