@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './SearchBar.css'
 
 export class SearchBar extends Component {
 
@@ -9,7 +10,7 @@ export class SearchBar extends Component {
 
   render() {
     return (
-      <form>
+      <form className='SearchBarStyle'>
         <input 
           type="text"
           name='country'

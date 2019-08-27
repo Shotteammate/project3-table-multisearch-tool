@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './TableRow.css';
 
 export class TableRow extends Component {
   render() {

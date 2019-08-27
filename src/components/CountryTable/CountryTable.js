@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TableRow from './TableRow';
+import './CountryTable.css';
 
 export class CountryTable extends Component {
   render() {
@@ -19,7 +20,7 @@ export class CountryTable extends Component {
     });
 
     return (
-      <table>
+      <table className='tableStyle'>
         <thead>
           <tr>
             <th>Country</th>
@@ -29,7 +30,7 @@ export class CountryTable extends Component {
             <th>Language</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className='tableBodyStyle'>
           {rows}
         </tbody>
       </table>
